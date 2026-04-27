@@ -1,0 +1,334 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis do projeto */
+:root {
+  --cor-primaria: #c41e23;
+  --cor-secundaria: #1a1a1a;
+  --cor-fundo: #f5f5f5;
+  --cor-texto: #222;
+  --cor-texto-claro: #fff;
+  --cor-borda: #ddd;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+
+  --fs-base: clamp(0.875rem, 2vw, 1rem);
+  --fs-h1: clamp(1.75rem, 4vw, 2.5rem);
+  --fs-h2: clamp(1.25rem, 3vw, 1.875rem);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+
+a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+input, select, textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* HEADER — Mobile first */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  background-color: var(--cor-secundaria);
+  color: var(--cor-texto-claro);
+  position: relative;
+}
+
+header h1 {
+  color: var(--cor-primaria);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xs);
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--cor-texto-claro);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.nav-links a:hover {
+  background-color: var(--cor-primaria);
+  text-decoration: none;
+}
+
+/* Hamburger menu — CSS only (checkbox hack) */
+.menu-toggle {
+  display: none;
+}
+
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  position: absolute;
+  right: var(--space-sm);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-btn span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--cor-texto-claro);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* MAIN — coluna única no mobile */
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  padding: var(--space-sm);
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  padding: var(--space-md);
+}
+
+.card h3 {
+  color: var(--cor-primaria);
+  margin-bottom: var(--space-xs);
+}
+
+/* Sidebar e aside */
+.sidebar, .aside {
+  background-color: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  padding: var(--space-md);
+}
+
+.sidebar ul, .aside ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li, .aside li {
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.sidebar li:last-child, .aside li:last-child {
+  border-bottom: none;
+}
+
+.aside h2 {
+  margin-top: var(--space-md);
+}
+
+.aside h2:first-child {
+  margin-top: 0;
+}
+
+/* Conteúdo principal */
+.content article {
+  margin-bottom: var(--space-lg);
+}
+
+.content article h2 {
+  margin-bottom: var(--space-sm);
+  color: var(--cor-primaria);
+}
+
+.content article p {
+  margin-bottom: var(--space-sm);
+}
+
+.content article img {
+  margin-top: var(--space-sm);
+  border-radius: 8px;
+}
+
+/* Seção de contato */
+#contato {
+  max-width: 600px;
+  margin: var(--space-lg) auto;
+  padding: var(--space-md);
+  background-color: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+}
+
+#contato h2 {
+  color: var(--cor-primaria);
+  margin-bottom: var(--space-sm);
+}
+
+#contato label {
+  display: block;
+  margin-top: var(--space-sm);
+  font-weight: bold;
+}
+
+#contato input,
+#contato textarea {
+  margin-top: var(--space-xs);
+  padding: var(--space-xs);
+  border: 1px solid var(--cor-borda);
+  border-radius: 4px;
+  font-size: var(--fs-base);
+}
+
+#contato button {
+  margin-top: var(--space-md);
+  padding: var(--space-xs) var(--space-lg);
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-claro);
+  border: none;
+  border-radius: 4px;
+  font-size: var(--fs-base);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#contato button:hover {
+  background-color: #a01a1e;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: var(--space-md);
+  background-color: var(--cor-secundaria);
+  color: var(--cor-texto-claro);
+  margin-top: var(--space-lg);
+}
+
+/* ── MOBILE PEQUENO: hamburger menu ────────────────── */
+@media (max-width: 480px) {
+  .menu-btn {
+    display: flex;
+  }
+
+  nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    width: 100%;
+  }
+
+  .menu-toggle:checked ~ nav {
+    max-height: 300px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ── TABLET: >= 768px ─────────────────────────────── */
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--space-sm) var(--space-lg);
+  }
+
+  main {
+    grid-template-columns: 240px 1fr;
+    grid-template-areas:
+      "sidebar main"
+      "sidebar main";
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .sidebar { grid-area: sidebar; }
+  .content { grid-area: main; }
+  .aside { display: none; }
+}
+
+/* ── DESKTOP: >= 1024px ───────────────────────────── */
+@media (min-width: 1024px) {
+  main {
+    grid-template-columns: 280px 1fr 220px;
+    grid-template-areas: "sidebar main aside";
+  }
+
+  .aside { display: block; grid-area: aside; }
+}
+
+/* Modo escuro automático */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-fundo: #121212;
+    --cor-texto: #e0e0e0;
+    --cor-borda: #333;
+  }
+
+  .card, .sidebar, .aside, #contato {
+    background-color: #1e1e1e;
+  }
+
+  a {
+    color: #e55558;
+  }
+
+  .nav-links a:hover {
+    background-color: #e55558;
+  }
+}
+
+/* Reduzir movimento para acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
