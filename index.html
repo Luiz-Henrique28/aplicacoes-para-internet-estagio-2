@@ -3,198 +3,292 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sport Club do Recife - História, títulos e momentos marcantes do Leão da Ilha do Retiro">
-  <title>Sport Club do Recife</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Sport Club do Recife - Dark Mode Edition">
+  <title>Sport Club do Recife - Oficial</title>
+  <style>
+    :root {
+      --cor-primaria: #c41e23;
+      --cor-secundaria: #000000;
+      --cor-destaque: #fdb913;
+      --cor-fundo-página: #121212; /* Grafite escuro */
+      --cor-fundo-card: #1e1e1e;   /* Cinza escuro para blocos */
+      --cor-texto: #ffffff;        /* Texto branco para leitura */
+      --cor-texto-secundario: #b3b3b3;
+      --cor-borda: #333333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--cor-texto);
+      background-color: var(--cor-fundo-página);
+    }
+
+    header {
+      background-color: var(--cor-secundaria);
+      color: var(--cor-texto);
+      padding: 1.2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 4px solid var(--cor-primaria);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: var(--cor-texto);
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--cor-destaque);
+    }
+
+    main {
+      max-width: 1300px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      gap: 25px;
+    }
+
+    @media (min-width: 1024px) {
+      main {
+        grid-template-columns: 280px 1fr 280px;
+      }
+    }
+
+    section, aside {
+      background: var(--cor-fundo-card);
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid var(--cor-borda);
+    }
+
+    h2 {
+      color: var(--cor-destaque); /* Destaque em dourado no modo escuro */
+      margin-bottom: 20px;
+      border-left: 5px solid var(--cor-primaria);
+      padding-left: 15px;
+      text-transform: uppercase;
+      font-size: 1.3rem;
+    }
+
+    p {
+      color: var(--cor-texto-secundario);
+      margin-bottom: 15px;
+    }
+
+    .sidebar li {
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--cor-borda);
+      color: var(--cor-texto-secundario);
+    }
+
+    .sidebar strong {
+      color: var(--cor-texto);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: #252525;
+      border: 1px solid var(--cor-borda);
+      padding: 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--cor-primaria);
+      background: #2a2a2a;
+    }
+
+    .card h3 {
+      color: var(--cor-texto);
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 20px 0;
+      filter: brightness(0.8); /* Ajuste para não ofuscar no modo escuro */
+      transition: 0.3s;
+    }
+
+    img:hover {
+      filter: brightness(1);
+    }
+
+    input, textarea {
+      background-color: #252525;
+      border: 1px solid var(--cor-borda);
+      color: white;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 1rem;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--cor-primaria);
+    }
+
+    button {
+      background: var(--cor-primaria);
+      color: white;
+      border: none;
+      padding: 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 6px;
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #e62229;
+      box-shadow: 0 0 15px rgba(196, 30, 35, 0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      background: var(--cor-secundaria);
+      color: var(--cor-texto-secundario);
+      margin-top: 60px;
+      border-top: 1px solid var(--cor-borda);
+    }
+
+    .aside a {
+      color: var(--cor-destaque);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .aside a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
   <header>
     <div class="logo">
-      <h1>Sport Club do Recife</h1>
+      <h1 style="font-size: 1.5rem; letter-spacing: 1px;">SPORT <span style="color: var(--cor-primaria);">CLUB</span></h1>
     </div>
     <nav>
       <ul class="nav-links">
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#titulos">Títulos</a></li>
-        <li><a href="#gols">Gols Marcantes</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
-    <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    <label for="menu-toggle" class="menu-btn">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
   </header>
 
   <main>
     <aside class="sidebar">
-      <h2>Informações</h2>
+      <h2>Ficha Técnica</h2>
       <ul>
         <li><strong>Fundação:</strong> 13 de maio de 1905</li>
         <li><strong>Estádio:</strong> Ilha do Retiro</li>
         <li><strong>Mascote:</strong> Leão</li>
         <li><strong>Cores:</strong> Vermelho e Preto</li>
-        <li><strong>Presidente:</strong> Matheus Souto Maior</li>
+        <li><strong>Alcunha:</strong> O Leão da Ilha</li>
       </ul>
     </aside>
 
     <section class="content">
       <article id="sobre">
-        <h2>Sobre o Clube</h2>
-        <p>
-          O Sport Club do Recife é um dos clubes mais tradicionais do futebol brasileiro,
-          fundado em 13 de maio de 1905 na cidade do Recife, Pernambuco. Conhecido como
-          "Leão da Ilha do Retiro", o clube carrega uma história de glórias e paixão que
-          atravessa gerações de torcedores.
-        </p>
-        <p>
-          Com mais de um século de história, o Sport é o maior campeão pernambucano e
-          possui conquistas de expressão nacional. A torcida rubro-negra é uma das mais
-          apaixonadas do Nordeste, sempre presente nos momentos decisivos do clube.
-        </p>
-        <img src="35292870670_5e50604124_b-1.webp" alt="Estádio Ilha do Retiro, casa do Sport Club do Recife">
+        <h2>O Rugido do Leão</h2>
+        <p>O Sport Club do Recife não é apenas um clube, é uma religião para milhões de torcedores. Fundado há mais de um século, consolidou-se como o maior do Nordeste.</p>
+        <img src="assets/img/35292870670_5e50604124_b-1.webp" alt="Ilha do Retiro">
       </article>
 
       <article id="titulos">
-        <h2>Títulos Mais Importantes</h2>
+        <h2>Galeria de Glórias</h2>
         <div class="cards-grid">
           <div class="card">
-            <h3>Campeonato Brasileiro 1987</h3>
-            <p>
-              O título mais importante da história do clube. O Sport venceu o Guarani na
-              final e se consagrou campeão brasileiro, sendo o primeiro clube do Norte/Nordeste
-              a conquistar o título. Uma conquista que marcou o futebol nacional.
-            </p>
+            <h3>Brasileiro 1987</h3>
+            <p>O eterno grito de campeão nacional que ecoa em todo o Brasil.</p>
           </div>
           <div class="card">
             <h3>Copa do Brasil 2008</h3>
-            <p>
-              Sob comando de Nelsinho Baptista, o Leão conquistou a Copa do Brasil ao
-              derrotar o Corinthians na final. O jogo de volta na Ilha do Retiro ficou marcado
-              pela festa da torcida rubro-negra que lotou o estádio.
-            </p>
+            <p>A conquista que parou Pernambuco em uma final inesquecível.</p>
           </div>
           <div class="card">
-            <h3>Campeonato Pernambucano</h3>
-            <p>
-              O Sport é o maior campeão de Pernambuco, com mais de 40 títulos estaduais
-              conquistados. O domínio no futebol local é parte fundamental da identidade
-              do clube e da rivalidade com os adversários Náutico e Santa Cruz.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Campeonato Brasileiro Série B 2019</h3>
-            <p>
-              Campanha sólida na Série B que garantiu o acesso do Leão à elite do futebol
-              brasileiro. O time mostrou raça e determinação durante toda a competição,
-              com apoio massivo da torcida nos jogos na Ilha do Retiro.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article id="gols">
-        <h2>Gols Marcantes</h2>
-        <div class="cards-grid">
-          <div class="card">
-            <h3>Neto Baiano — Final da Copa do Brasil 2008</h3>
-            <p>
-              O gol decisivo de Neto Baiano na final contra o Corinthians selou a conquista
-              da Copa do Brasil. O atacante se tornou ídolo eterno da torcida sportiva
-              com essa atuação histórica.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Rivaldo — Série A 2009</h3>
-            <p>
-              Rivaldo, craque com passagem por Barcelona e seleção brasileira, marcou
-              gols espetaculares vestindo a camisa rubro-negra. Sua passagem pelo Sport
-              elevou o patamar do clube nacionalmente.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Leandro Barcia — Clássico contra o Náutico</h3>
-            <p>
-              Gol de bicicleta antológico no Clássico dos Clássicos. Um momento de pura
-              genialidade que entrou para a galeria dos gols mais bonitos da história
-              do futebol pernambucano.
-            </p>
+            <h3>Copa do Nordeste</h3>
+            <p>A hegemonia regional provada com a taça de "Lampions League".</p>
           </div>
         </div>
       </article>
     </section>
 
     <aside class="aside">
-      <h2>Redes Sociais</h2>
-      <ul>
+      <h2>Siga o Leão</h2>
+      <ul style="list-style: none;">
         <li><a href="https://twitter.com/sportrecife" target="_blank">Twitter</a></li>
         <li><a href="https://instagram.com/sportrecife" target="_blank">Instagram</a></li>
         <li><a href="https://www.youtube.com/@tvsportrecife" target="_blank">YouTube</a></li>
       </ul>
-      <h2>Hino</h2>
-      <p>
-        Com o Sport, eternamente estarei<br>
-        Pois rubro-negras são<br>
-        As cores que abracei<br>
-        E o abraço, de tão forte,<br>
-        Não tem separação<br>
-        Pra mim, o meu Sport<br>
-        É religião<br><br>
-        A vida a gente vive<br>
-        Pra vencer<br>
-        Sport, Sport<br>
-        Uma razão para viver<br><br>
-        Treze de Maio,<br>
-        Mil novecentos e cinco<br>
-        Dia divino em que Guilherme de Aquino<br>
-        Reúne, no Recife, ardentes seguidores<br>
-        Fundando esta nação de vencedores<br>
-        Que encanta, enobrece e dá prazer<br>
-        Sport, Sport<br>
-        Uma razão para viver<br><br>
-        Eterno símbolo de orgulho<br>
-        É o pavilhão<br>
-        De listras pretas e vermelhas,<br>
-        Com o Leão<br>
-        Erguendo, imponente, o imortal escudo<br>
-        Mostrando à gente que o Sport é tudo<br>
-        Que a vida tem de belo a oferecer<br>
-        Sport, Sport<br>
-        Uma razão para viver<br><br>
-        São gerações e corações<br>
-        Fazendo a história<br>
-        São campeões e emoções<br>
-        Tecendo a glória<br>
-        Do bravo Leão da Ilha, Sport obsessão<br>
-        Que faz bater mais forte o coração<br>
-        Torcida mais fiel não pode haver<br>
-        Sport, Sport<br>
-        Uma razão para viver
+      <br>
+      <h2>Hino Oficial</h2>
+      <p style="font-style: italic; font-size: 0.9rem;">
+        "Com o Sport eternamente estarei,<br>
+        Pois rubro-negras são as cores que abracei!"
       </p>
     </aside>
   </main>
 
-  <section id="contato">
-    <h2>Contato</h2>
-    <form>
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" placeholder="Seu nome">
-
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" placeholder="seu@email.com">
-
-      <label for="mensagem">Mensagem:</label>
-      <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sua mensagem"></textarea>
-
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+  <div style="max-width: 1300px; margin: 0 auto; padding: 0 20px;">
+    <section id="contato">
+      <h2>Entre em Contato</h2>
+      <form>
+        <input type="text" placeholder="Nome Completo">
+        <input type="email" placeholder="Seu E-mail">
+        <textarea rows="5" placeholder="Sua Mensagem"></textarea>
+        <button type="button">Enviar Rugido</button>
+      </form>
+    </section>
+  </div>
 
   <footer>
-    <p>&copy; 2025 Sport Club do Recife — Trabalho acadêmico</p>
+    <p>&copy; 2025 Sport Club do Recife — Projeto Engenharia de Interface</p>
   </footer>
 
 </body>
