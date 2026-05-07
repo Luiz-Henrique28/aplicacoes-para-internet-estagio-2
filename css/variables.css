@@ -1,0 +1,87 @@
+:root {
+  --color-primary-300: #e83a40;
+  --color-primary-400: #d42227;
+  --color-primary-500: #2E75B6;
+  --color-primary-600: #a8181d;
+
+  --color-sport-red:   #c41e23;
+  --color-sport-black: #000000;
+  --color-sport-gold:  #fdb913;
+
+  --color-bg-base:     #0f0f0f;
+  --color-bg-surface:  #1a1a1a;
+  --color-bg-elevated: #252525;
+  --color-bg-card:     #1e1e1e;
+  --color-bg-footer:   #111827;
+  --color-bg-nav:      #000000;
+
+  --color-text-primary:   #f5f5f5;
+  --color-text-secondary: #a0a0a0;
+  --color-text-muted:     #6b6b6b;
+  --color-text-inverse:   #000000;
+
+  --color-border-default: #2a2a2a;
+  --color-border-subtle:  #333333;
+  --color-border-accent:  var(--color-sport-red);
+
+  --color-focus:   rgba(196, 30, 35, 0.6);
+  --color-overlay: rgba(0, 0, 0, 0.7);
+
+  --font-body:    'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: 'Poppins', 'Inter', 'Segoe UI', sans-serif;
+
+  --font-size-xs:   0.75rem;
+  --font-size-sm:   0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md:   1.125rem;
+  --font-size-lg:   1.25rem;
+  --font-size-xl:   1.5rem;
+  --font-size-2xl:  1.875rem;
+  --font-size-3xl:  2.25rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold:   700;
+
+  --line-height-tight:  1.25;
+  --line-height-normal: 1.6;
+  --line-height-loose:  1.8;
+
+  --space-xs:  0.25rem;
+  --space-sm:  0.5rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-full: 9999px;
+
+  --border-width-thin:   1px;
+  --border-width-medium: 2px;
+  --border-width-thick:  4px;
+
+  --shadow-sm:  0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md:  0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg:  0 8px 24px rgba(0, 0, 0, 0.6);
+  --shadow-xl:  0 16px 40px rgba(0, 0, 0, 0.7);
+  --shadow-red: 0 8px 24px rgba(196, 30, 35, 0.35);
+
+  --z-base:    0;
+  --z-raised:  10;
+  --z-overlay: 100;
+  --z-navbar:  1000;
+  --z-modal:   2000;
+
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  --navbar-height:          68px;
+  --navbar-height-scrolled: 52px;
+  --navbar-padding-x:       5%;
+}

@@ -1,0 +1,122 @@
+.btn {
+  --btn-bg:          transparent;
+  --btn-color:       var(--color-text-primary);
+  --btn-border:      transparent;
+  --btn-bg-hover:    transparent;
+  --btn-color-hover: var(--color-text-primary);
+  --btn-border-hover: transparent;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-xl);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  border: var(--border-width-medium) solid var(--btn-border);
+  border-radius: var(--radius-md);
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  text-decoration: none;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.btn:hover {
+  background-color: var(--btn-bg-hover);
+  color: var(--btn-color-hover);
+  border-color: var(--btn-border-hover);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--color-sport-red);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px rgba(196, 30, 35, 0.25);
+}
+
+.btn--primary {
+  --btn-bg:           var(--color-sport-red);
+  --btn-color:        #ffffff;
+  --btn-border:       var(--color-sport-red);
+  --btn-bg-hover:     var(--color-primary-300);
+  --btn-color-hover:  #ffffff;
+  --btn-border-hover: var(--color-primary-300);
+
+  box-shadow: 0 4px 14px rgba(196, 30, 35, 0.3);
+}
+
+.btn--primary:hover {
+  box-shadow: 0 6px 20px rgba(196, 30, 35, 0.45);
+}
+
+.btn--primary:focus-visible {
+  outline-color: var(--color-sport-gold);
+  box-shadow: 0 0 0 5px rgba(253, 185, 19, 0.35);
+}
+
+.btn--outline {
+  --btn-bg:           transparent;
+  --btn-color:        var(--color-sport-red);
+  --btn-border:       var(--color-sport-red);
+  --btn-bg-hover:     rgba(196, 30, 35, 0.08);
+  --btn-color-hover:  var(--color-sport-red);
+  --btn-border-hover: var(--color-sport-red);
+}
+
+.btn--ghost {
+  --btn-bg:           transparent;
+  --btn-color:        var(--color-text-secondary);
+  --btn-border:       transparent;
+  --btn-bg-hover:     rgba(255, 255, 255, 0.06);
+  --btn-color-hover:  var(--color-text-primary);
+  --btn-border-hover: transparent;
+}
+
+.btn--gold {
+  --btn-bg:           var(--color-sport-gold);
+  --btn-color:        var(--color-text-inverse);
+  --btn-border:       var(--color-sport-gold);
+  --btn-bg-hover:     #e0a50a;
+  --btn-color-hover:  var(--color-text-inverse);
+  --btn-border-hover: #e0a50a;
+}
+
+.btn--sm {
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-size-xs);
+}
+
+.btn--lg {
+  padding: var(--space-md) var(--space-2xl);
+  font-size: var(--font-size-base);
+  border-radius: var(--radius-lg);
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn--full {
+  width: 100%;
+}

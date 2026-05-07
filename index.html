@@ -3,293 +3,409 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sport Club do Recife - Dark Mode Edition">
-  <title>Sport Club do Recife - Oficial</title>
-  <style>
-    :root {
-      --cor-primaria: #c41e23;
-      --cor-secundaria: #000000;
-      --cor-destaque: #fdb913;
-      --cor-fundo-página: #121212; /* Grafite escuro */
-      --cor-fundo-card: #1e1e1e;   /* Cinza escuro para blocos */
-      --cor-texto: #ffffff;        /* Texto branco para leitura */
-      --cor-texto-secundario: #b3b3b3;
-      --cor-borda: #333333;
-    }
+  <meta name="description" content="Sport Club do Recife — O Leão da Ilha. Conheça a história, títulos e os bastidores do maior clube do Nordeste brasileiro.">
+  <meta name="keywords" content="Sport Club do Recife, Leão da Ilha, futebol, Pernambuco, Nordeste">
+  <meta name="author" content="Engenharia de Interface — Aula 09">
+  <title>Sport Club do Recife — O Leão da Ilha</title>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      color: var(--cor-texto);
-      background-color: var(--cor-fundo-página);
-    }
-
-    header {
-      background-color: var(--cor-secundaria);
-      color: var(--cor-texto);
-      padding: 1.2rem 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 4px solid var(--cor-primaria);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
-
-    .nav-links a {
-      color: var(--cor-texto);
-      text-decoration: none;
-      font-weight: 600;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      transition: 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--cor-destaque);
-    }
-
-    main {
-      max-width: 1300px;
-      margin: 30px auto;
-      padding: 0 20px;
-      display: grid;
-      gap: 25px;
-    }
-
-    @media (min-width: 1024px) {
-      main {
-        grid-template-columns: 280px 1fr 280px;
-      }
-    }
-
-    section, aside {
-      background: var(--cor-fundo-card);
-      padding: 25px;
-      border-radius: 12px;
-      border: 1px solid var(--cor-borda);
-    }
-
-    h2 {
-      color: var(--cor-destaque); /* Destaque em dourado no modo escuro */
-      margin-bottom: 20px;
-      border-left: 5px solid var(--cor-primaria);
-      padding-left: 15px;
-      text-transform: uppercase;
-      font-size: 1.3rem;
-    }
-
-    p {
-      color: var(--cor-texto-secundario);
-      margin-bottom: 15px;
-    }
-
-    .sidebar li {
-      margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--cor-borda);
-      color: var(--cor-texto-secundario);
-    }
-
-    .sidebar strong {
-      color: var(--cor-texto);
-    }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .card {
-      background: #252525;
-      border: 1px solid var(--cor-borda);
-      padding: 20px;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: var(--cor-primaria);
-      background: #2a2a2a;
-    }
-
-    .card h3 {
-      color: var(--cor-texto);
-      margin-bottom: 10px;
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin: 20px 0;
-      filter: brightness(0.8); /* Ajuste para não ofuscar no modo escuro */
-      transition: 0.3s;
-    }
-
-    img:hover {
-      filter: brightness(1);
-    }
-
-    input, textarea {
-      background-color: #252525;
-      border: 1px solid var(--cor-borda);
-      color: white;
-      padding: 12px;
-      border-radius: 6px;
-      font-size: 1rem;
-      width: 100%;
-      margin-bottom: 15px;
-    }
-
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: var(--cor-primaria);
-    }
-
-    button {
-      background: var(--cor-primaria);
-      color: white;
-      border: none;
-      padding: 15px;
-      font-weight: bold;
-      text-transform: uppercase;
-      cursor: pointer;
-      border-radius: 6px;
-      width: 100%;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background: #e62229;
-      box-shadow: 0 0 15px rgba(196, 30, 35, 0.4);
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px;
-      background: var(--cor-secundaria);
-      color: var(--cor-texto-secundario);
-      margin-top: 60px;
-      border-top: 1px solid var(--cor-borda);
-    }
-
-    .aside a {
-      color: var(--cor-destaque);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .aside a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/components/navbar.css">
+  <link rel="stylesheet" href="css/components/card.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+  <link rel="stylesheet" href="css/components/btn.css">
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <h1 style="font-size: 1.5rem; letter-spacing: 1px;">SPORT <span style="color: var(--cor-primaria);">CLUB</span></h1>
-    </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#titulos">Títulos</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+  <header class="header" id="site-header">
+    <nav class="navbar" aria-label="Navegação principal">
+
+      <a href="#inicio" class="navbar__logo" aria-label="Sport Club do Recife — Página inicial">
+        <img class="navbar__logo-mark" src="assets/img/image14.webp" alt="Escudo Sport Club do Recife">
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-name">Sport Club</span>
+          <span class="navbar__logo-sub">do Recife · 1905</span>
+        </div>
+      </a>
+
+      <button
+        class="navbar__hamburger"
+        id="navbar-hamburger"
+        aria-controls="navbar-menu"
+        aria-expanded="false"
+        aria-label="Abrir menu de navegação"
+      >
+        <span class="navbar__bar"></span>
+        <span class="navbar__bar"></span>
+        <span class="navbar__bar"></span>
+      </button>
+
+      <div class="navbar__nav" id="navbar-menu" role="navigation">
+        <ul class="navbar__links">
+          <li><a href="#inicio" aria-current="page">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#titulos">Títulos</a></li>
+          <li><a href="#estatisticas">Estatísticas</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li class="navbar__link--cta"><a href="#contato">Fale Conosco</a></li>
+        </ul>
+      </div>
+
     </nav>
   </header>
 
-  <main>
-    <aside class="sidebar">
-      <h2>Ficha Técnica</h2>
-      <ul>
-        <li><strong>Fundação:</strong> 13 de maio de 1905</li>
-        <li><strong>Estádio:</strong> Ilha do Retiro</li>
-        <li><strong>Mascote:</strong> Leão</li>
-        <li><strong>Cores:</strong> Vermelho e Preto</li>
-        <li><strong>Alcunha:</strong> O Leão da Ilha</li>
-      </ul>
-    </aside>
+  <section class="hero" id="inicio" aria-label="Apresentação do clube">
+    <div class="hero__content">
+      <span class="hero__badge">Fundado em 13 de maio de 1905</span>
+      <h1 class="hero__title">
+        O Rugido do<br><span>Leão da Ilha</span>
+      </h1>
+      <p class="hero__subtitle">
+        Mais de um século de glórias, paixão e conquistas que
+        fazem do Sport o maior clube do Nordeste brasileiro.
+      </p>
+      <div class="hero__actions">
+        <a href="#titulos" class="btn btn--primary btn--lg">Ver Títulos</a>
+        <a href="#sobre" class="btn btn--outline btn--lg">Conheça o Clube</a>
+      </div>
+    </div>
+  </section>
 
-    <section class="content">
-      <article id="sobre">
-        <h2>O Rugido do Leão</h2>
-        <p>O Sport Club do Recife não é apenas um clube, é uma religião para milhões de torcedores. Fundado há mais de um século, consolidou-se como o maior do Nordeste.</p>
-        <img src="assets/img/35292870670_5e50604124_b-1.webp" alt="Ilha do Retiro">
-      </article>
+  <main class="main" id="conteudo-principal">
 
-      <article id="titulos">
-        <h2>Galeria de Glórias</h2>
-        <div class="cards-grid">
-          <div class="card">
-            <h3>Brasileiro 1987</h3>
-            <p>O eterno grito de campeão nacional que ecoa em todo o Brasil.</p>
+    <section class="section" id="titulos" aria-labelledby="titulo-conquistas">
+      <h2 class="section__title" id="titulo-conquistas">Conquistas do Leão</h2>
+
+      <div class="cards-grid">
+
+        <article class="card card--featured" id="card-brasileiro">
+          <div class="card__media">
+            <img
+              src="assets/img/1987"
+              alt="Campeonato Brasileiro 1987 — Sport Club do Recife"
+              loading="eager"
+            >
           </div>
-          <div class="card">
-            <h3>Copa do Brasil 2008</h3>
-            <p>A conquista que parou Pernambuco em uma final inesquecível.</p>
+          <div class="card__body">
+            <span class="card__badge"><i class="fa-solid fa-trophy"></i> Nacional</span>
+            <h3 class="card__title">Campeonato Brasileiro 1987</h3>
+            <p class="card__text">
+              O maior título da história rubro-negra. Em uma final lendária contra o Guarani,
+              o Sport conquistou o único Campeonato Brasileiro da sua história, eternizando-se
+              no coração de cada torcedor e provando sua grandeza nacional.
+            </p>
           </div>
-          <div class="card">
-            <h3>Copa do Nordeste</h3>
-            <p>A hegemonia regional provada com a taça de "Lampions League".</p>
+          <div class="card__footer">
+            <span class="card__meta"><i class="fa-regular fa-calendar"></i> Dezembro de 1987</span>
+            <a href="#sobre" class="btn btn--ghost btn--sm">Saiba mais</a>
+          </div>
+        </article>
+
+        <article class="card" id="card-copa-brasil">
+          <div class="card__media">
+            <img src="assets/img/OIP.webp" alt="Copa do Brasil 2008 — Sport Club do Recife">
+          </div>
+          <div class="card__body">
+            <span class="card__badge"><i class="fa-solid fa-medal"></i> Nacional</span>
+            <h3 class="card__title">Copa do Brasil 2008</h3>
+            <p class="card__text">
+              Em uma final inesquecível contra o Corinthians, o Sport levantou a
+              Copa do Brasil parando todo o estado de Pernambuco em euforia coletiva.
+            </p>
+          </div>
+          <div class="card__footer">
+            <span class="card__meta"><i class="fa-regular fa-calendar"></i> Novembro de 2008</span>
+            <a href="#sobre" class="btn btn--ghost btn--sm">Saiba mais</a>
+          </div>
+        </article>
+
+        <article class="card" id="card-copa-nordeste">
+          <div class="card__media">
+            <img src="assets/img/nordeste" alt="Copa do Nordeste — Sport Club do Recife">
+          </div>
+          <div class="card__body">
+            <span class="card__badge"><i class="fa-solid fa-star"></i> Regional</span>
+            <h3 class="card__title">Copa do Nordeste</h3>
+            <p class="card__text">
+              A hegemonia regional provada com múltiplas conquistas da "Lampions League",
+              demonstrando o domínio rubro-negro sobre o futebol nordestino.
+            </p>
+          </div>
+          <div class="card__footer">
+            <span class="card__meta"><i class="fa-regular fa-calendar"></i> Múltiplas edições</span>
+            <a href="#sobre" class="btn btn--ghost btn--sm">Saiba mais</a>
+          </div>
+        </article>
+
+        <article class="card" id="card-pernambucano">
+          <div class="card__media">
+            <img src="assets/img/pernambucano" alt="Campeonato Pernambucano — Sport Club do Recife">
+          </div>
+          <div class="card__body">
+            <span class="card__badge"><i class="fa-solid fa-award"></i> Estadual</span>
+            <h3 class="card__title">Campeonato Pernambucano</h3>
+            <p class="card__text">
+              Com mais de 40 títulos estaduais, o Sport é o maior campeão
+              pernambucano de todos os tempos, reinando soberano em sua terra natal.
+            </p>
+          </div>
+          <div class="card__footer">
+            <span class="card__meta"><i class="fa-regular fa-calendar"></i> 40+ títulos</span>
+            <a href="#sobre" class="btn btn--ghost btn--sm">Saiba mais</a>
+          </div>
+        </article>
+
+        <article class="card" id="card-ilha-do-retiro">
+          <div class="card__media">
+            <img src="assets/img/ilha.webp" alt="Ilha do Retiro — Estádio do Sport Club do Recife">
+          </div>
+          <div class="card__body">
+            <span class="card__badge"><i class="fa-solid fa-landmark"></i> Estádio</span>
+            <h3 class="card__title">Ilha do Retiro</h3>
+            <p class="card__text">
+              A fortaleza rubro-negra desde 1929. O estádio com capacidade para
+              mais de 32 mil torcedores é palco das maiores batalhas do Leão da Ilha.
+            </p>
+          </div>
+          <div class="card__footer">
+            <span class="card__meta"><i class="fa-regular fa-calendar"></i> Inaugurado em 1929</span>
+            <a href="#contato" class="btn btn--ghost btn--sm">Visitar</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section" id="estatisticas" aria-labelledby="titulo-stats">
+      <h2 class="section__title" id="titulo-stats">Números do Leão</h2>
+
+      <div class="cards-grid">
+        <div class="card card--stat" id="stat-fundacao">
+          <div class="card__body">
+            <span class="card__number">1905</span>
+            <span class="card__label">Ano de Fundação</span>
           </div>
         </div>
-      </article>
+        <div class="card card--stat" id="stat-titulos">
+          <div class="card__body">
+            <span class="card__number">40+</span>
+            <span class="card__label">Títulos Estaduais</span>
+          </div>
+        </div>
+        <div class="card card--stat" id="stat-torcida">
+          <div class="card__body">
+            <span class="card__number">2M+</span>
+            <span class="card__label">Torcedores</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <aside class="aside">
-      <h2>Siga o Leão</h2>
-      <ul style="list-style: none;">
-        <li><a href="https://twitter.com/sportrecife" target="_blank">Twitter</a></li>
-        <li><a href="https://instagram.com/sportrecife" target="_blank">Instagram</a></li>
-        <li><a href="https://www.youtube.com/@tvsportrecife" target="_blank">YouTube</a></li>
-      </ul>
-      <br>
-      <h2>Hino Oficial</h2>
-      <p style="font-style: italic; font-size: 0.9rem;">
-        "Com o Sport eternamente estarei,<br>
-        Pois rubro-negras são as cores que abracei!"
-      </p>
-    </aside>
+    <section class="section" id="sobre" aria-labelledby="titulo-sobre">
+      <h2 class="section__title" id="titulo-sobre">Sobre o Clube</h2>
+
+      <div class="cards-grid">
+        <article class="card" id="card-historia">
+          <div class="card__body">
+            <span class="card__badge"><i class="fa-solid fa-book-open"></i> História</span>
+            <h3 class="card__title">Uma Religião Rubro-Negra</h3>
+            <p class="card__text">
+              O Sport Club do Recife não é apenas um clube — é uma religião para milhões
+              de torcedores. Fundado em 13 de maio de 1905 por jovens ingleses e brasileiros,
+              consolidou-se como o maior do Nordeste e uma das instituições esportivas mais
+              tradicionais do Brasil.
+            </p>
+            <p class="card__text">
+              Suas cores vermelho e preto, representadas pelo uniforme listrado, são símbolo
+              de identidade e pertencimento para toda uma geração de pernambucanos.
+            </p>
+          </div>
+          <div class="card__footer">
+            <span class="card__meta"><i class="fa-solid fa-shield-halved"></i> Alcunha: Leão da Ilha</span>
+          </div>
+        </article>
+
+        <article class="card" id="card-ficha">
+          <div class="card__body">
+            <span class="card__badge"><i class="fa-solid fa-clipboard-list"></i> Ficha Técnica</span>
+            <h3 class="card__title">Informações Oficiais</h3>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap: 0.75rem; margin-top: 0.5rem;">
+              <li style="display:flex; justify-content:space-between; padding-bottom:0.5rem; border-bottom: 1px solid var(--color-border-default); font-size: 0.875rem;">
+                <strong>Fundação</strong>
+                <span style="color: var(--color-text-muted)">13 de maio de 1905</span>
+              </li>
+              <li style="display:flex; justify-content:space-between; padding-bottom:0.5rem; border-bottom: 1px solid var(--color-border-default); font-size: 0.875rem;">
+                <strong>Estádio</strong>
+                <span style="color: var(--color-text-muted)">Ilha do Retiro</span>
+              </li>
+              <li style="display:flex; justify-content:space-between; padding-bottom:0.5rem; border-bottom: 1px solid var(--color-border-default); font-size: 0.875rem;">
+                <strong>Mascote</strong>
+                <span style="color: var(--color-text-muted)">Leão</span>
+              </li>
+              <li style="display:flex; justify-content:space-between; padding-bottom:0.5rem; border-bottom: 1px solid var(--color-border-default); font-size: 0.875rem;">
+                <strong>Cores</strong>
+                <span style="color: var(--color-text-muted)">Vermelho e Preto</span>
+              </li>
+              <li style="display:flex; justify-content:space-between; font-size: 0.875rem;">
+                <strong>Cidade</strong>
+                <span style="color: var(--color-text-muted)">Recife — PE</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card" id="card-hino">
+          <div class="card__body">
+            <span class="card__badge"><i class="fa-solid fa-music"></i> Hino Oficial</span>
+            <h3 class="card__title">Com o Sport Eternamente</h3>
+            <p class="card__text" style="font-style: italic; line-height: 1.9;">
+              "Com o Sport eternamente estarei,<br>
+              Pois rubro-negras são as cores que abracei!<br>
+              No calor da Ilha, o Leão vai rugir,<br>
+              E o nordeste inteiro vai nos aplaudir!"
+            </p>
+          </div>
+          <div class="card__footer">
+            <a href="https://www.sport.com.br" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm">
+              Site Oficial
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="contato" aria-labelledby="titulo-contato">
+      <h2 class="section__title" id="titulo-contato">Entre em Contato</h2>
+
+      <div style="max-width: 600px;">
+        <div class="card" id="card-contato">
+          <div class="card__body" style="gap: var(--space-md);">
+            <p class="card__text">
+              Tem alguma dúvida, sugestão ou quer saber mais sobre o Sport Club do Recife?
+              Envie sua mensagem abaixo.
+            </p>
+            <form id="form-contato" novalidate>
+              <div style="margin-bottom: var(--space-md);">
+                <label for="input-nome" class="visually-hidden">Nome Completo</label>
+                <input
+                  type="text"
+                  id="input-nome"
+                  name="nome"
+                  placeholder="Nome Completo"
+                  autocomplete="name"
+                  required
+                >
+              </div>
+              <div style="margin-bottom: var(--space-md);">
+                <label for="input-email" class="visually-hidden">Seu E-mail</label>
+                <input
+                  type="email"
+                  id="input-email"
+                  name="email"
+                  placeholder="Seu E-mail"
+                  autocomplete="email"
+                  required
+                >
+              </div>
+              <div style="margin-bottom: var(--space-lg);">
+                <label for="input-mensagem" class="visually-hidden">Sua Mensagem</label>
+                <textarea
+                  id="input-mensagem"
+                  name="mensagem"
+                  rows="5"
+                  placeholder="Sua Mensagem"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full" id="btn-enviar">
+                <i class="fa-solid fa-paper-plane"></i> Enviar Mensagem
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <div style="max-width: 1300px; margin: 0 auto; padding: 0 20px;">
-    <section id="contato">
-      <h2>Entre em Contato</h2>
-      <form>
-        <input type="text" placeholder="Nome Completo">
-        <input type="email" placeholder="Seu E-mail">
-        <textarea rows="5" placeholder="Sua Mensagem"></textarea>
-        <button type="button">Enviar Rugido</button>
-      </form>
-    </section>
-  </div>
+  <footer class="footer" id="rodape">
 
-  <footer>
-    <p>&copy; 2025 Sport Club do Recife — Projeto Engenharia de Interface</p>
+    <div class="footer__top">
+
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img class="footer__logo-mark" src="assets/img/image14.webp" alt="Escudo Sport Club do Recife">
+          <span class="footer__logo-name">Sport Club do Recife</span>
+        </div>
+        <p class="footer__tagline">
+          O Leão da Ilha rugiu pela primeira vez em 1905 e nunca mais parou.
+          Vermelho e preto no coração do Nordeste.
+        </p>
+        <nav class="footer__social" aria-label="Redes sociais do Sport">
+          <a href="https://twitter.com/sportrecife" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Twitter do Sport Club do Recife"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://instagram.com/sportrecife" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram do Sport Club do Recife"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@tvsportrecife" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="YouTube do Sport Club do Recife"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.facebook.com/sportrecife" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook do Sport Club do Recife"><i class="fa-brands fa-facebook-f"></i></a>
+        </nav>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__col-title">Navegação</h3>
+        <ul class="footer__links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre o Clube</a></li>
+          <li><a href="#titulos">Títulos</a></li>
+          <li><a href="#estatisticas">Estatísticas</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__col-title">Conquistas</h3>
+        <ul class="footer__links">
+          <li><a href="#card-brasileiro">Brasileiro 1987</a></li>
+          <li><a href="#card-copa-brasil">Copa do Brasil 2008</a></li>
+          <li><a href="#card-copa-nordeste">Copa do Nordeste</a></li>
+          <li><a href="#card-pernambucano">Pernambucano</a></li>
+          <li><a href="#card-ilha-do-retiro">Ilha do Retiro</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__col-title">Links Úteis</h3>
+        <ul class="footer__links">
+          <li><a href="https://www.sport.com.br" target="_blank" rel="noopener noreferrer">Site Oficial</a></li>
+          <li><a href="https://www.cbf.com.br" target="_blank" rel="noopener noreferrer">CBF</a></li>
+          <li><a href="https://www.twitter.com/sportrecife" target="_blank" rel="noopener noreferrer">Twitter Oficial</a></li>
+          <li><a href="https://www.instagram.com/sportrecife" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">
+        &copy; <span id="copyright-year"></span>
+        <strong>Sport Club do Recife</strong> — Projeto Engenharia de Interface · Aula 09
+      </p>
+      <nav class="footer__legal" aria-label="Links legais">
+        <a href="#">Privacidade</a>
+        <a href="#">Termos de Uso</a>
+        <a href="#">Acessibilidade</a>
+      </nav>
+    </div>
+
   </footer>
+
+  <script src="js/main.js"></script>
 
 </body>
 </html>

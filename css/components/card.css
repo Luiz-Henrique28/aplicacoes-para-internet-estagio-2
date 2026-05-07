@@ -1,0 +1,192 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-card);
+  border: var(--border-width-thin) solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-sport-red);
+}
+
+.card__media {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--color-bg-elevated);
+}
+
+.card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  margin: 0;
+  filter: brightness(0.75);
+  transition: transform var(--transition-base), filter var(--transition-base);
+}
+
+.card:hover .card__media img {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+
+.card__body {
+  padding: var(--space-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-sport-red);
+  background: rgba(196, 30, 35, 0.1);
+  padding: 2px var(--space-sm);
+  border-radius: var(--radius-full);
+  width: fit-content;
+}
+
+.card__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-tight);
+  margin: 0;
+}
+
+.card__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+  flex: 1;
+  margin: 0;
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  border-top: var(--border-width-thin) solid var(--color-border-default);
+  gap: var(--space-sm);
+}
+
+.card__meta {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.card--featured {
+  border-color: var(--color-sport-gold);
+  background: linear-gradient(
+    135deg,
+    rgba(196, 30, 35, 0.08) 0%,
+    var(--color-bg-card) 60%
+  );
+}
+
+.card--featured:hover {
+  border-color: var(--color-sport-gold);
+  box-shadow: var(--shadow-red);
+}
+
+.card--featured::before {
+  content: '★ DESTAQUE';
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.1em;
+  color: var(--color-sport-gold);
+  background: rgba(253, 185, 19, 0.12);
+  border: 1px solid rgba(253, 185, 19, 0.3);
+  padding: 2px var(--space-sm);
+  border-radius: var(--radius-full);
+  z-index: 1;
+}
+
+.card--featured .card__badge {
+  color: var(--color-sport-gold);
+  background: rgba(253, 185, 19, 0.1);
+}
+
+.card--featured .card__title {
+  font-size: var(--font-size-xl);
+}
+
+@media (min-width: 1200px) {
+  .card--featured {
+    grid-column: span 2;
+  }
+
+  .card--featured .card__media {
+    aspect-ratio: 21 / 9;
+  }
+}
+
+.card--horizontal {
+  flex-direction: row;
+}
+
+.card--horizontal .card__media {
+  width: 180px;
+  flex-shrink: 0;
+  aspect-ratio: auto;
+}
+
+@media (max-width: 480px) {
+  .card--horizontal {
+    flex-direction: column;
+  }
+
+  .card--horizontal .card__media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.card--stat {
+  text-align: center;
+  padding: var(--space-xl) var(--space-lg);
+  align-items: center;
+}
+
+.card--stat .card__body {
+  align-items: center;
+}
+
+.card--stat .card__number {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-sport-red);
+  line-height: 1;
+}
+
+.card--stat .card__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
