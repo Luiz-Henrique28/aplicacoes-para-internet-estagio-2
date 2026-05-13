@@ -1,7 +1,7 @@
 .footer {
   background-color: var(--color-bg-footer);
   color: var(--color-text-secondary);
-  border-top: var(--border-width-thick) solid var(--color-sport-red);
+  border-top: var(--border-width-thick) solid var(--color-brand-primary);
   margin-top: var(--space-3xl);
 }
 
@@ -74,7 +74,7 @@
   justify-content: center;
   width: 38px;
   height: 38px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-feedback-social-bg);
   border: var(--border-width-thin) solid var(--color-border-subtle);
   border-radius: var(--radius-md);
   color: var(--color-text-secondary);
@@ -85,13 +85,13 @@
 }
 
 .footer__social-link:hover {
-  background: var(--color-sport-red);
-  border-color: var(--color-sport-red);
-  color: #fff;
+  background: var(--color-action-primary);
+  border-color: var(--color-action-primary);
+  color: var(--color-text-on-action);
 }
 
 .footer__social-link:focus-visible {
-  outline: 2px solid var(--color-sport-red);
+  outline: 2px solid var(--color-action-focus);
   outline-offset: 2px;
 }
 
@@ -126,12 +126,12 @@
 }
 
 .footer__links a:hover {
-  color: var(--color-sport-gold);
+  color: var(--color-brand-accent);
   padding-left: var(--space-xs);
 }
 
 .footer__links a:focus-visible {
-  outline: 2px solid var(--color-sport-red);
+  outline: 2px solid var(--color-action-focus);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
@@ -163,7 +163,7 @@
 }
 
 .footer__copyright strong {
-  color: var(--color-sport-red);
+  color: var(--color-brand-primary);
 }
 
 .footer__legal {

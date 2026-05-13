@@ -1,0 +1,41 @@
+:root {
+  --color-brand-primary:   var(--_red-500);
+  --color-brand-primary-hover: var(--_red-300);
+  --color-brand-accent:    var(--_gold-400);
+  --color-brand-accent-hover: var(--_gold-500);
+  --color-brand-dark:      var(--_black-pure);
+
+  --color-action-primary:        var(--_red-500);
+  --color-action-primary-hover:  var(--_red-300);
+  --color-action-focus:          var(--_red-500);
+  --color-action-focus-ring:     rgba(196, 30, 35, 0.25);
+  --color-action-shadow:         rgba(196, 30, 35, 0.3);
+  --color-action-shadow-hover:   rgba(196, 30, 35, 0.45);
+
+  --color-bg-base:     var(--_gray-950);
+  --color-bg-surface:  var(--_gray-900);
+  --color-bg-elevated: var(--_gray-800);
+  --color-bg-card:     var(--_gray-850);
+  --color-bg-footer:   var(--_gray-920);
+  --color-bg-nav:      var(--_black-pure);
+  --color-bg-overlay:  rgba(0, 0, 0, 0.7);
+
+  --color-text-primary:   var(--_gray-50);
+  --color-text-secondary: var(--_gray-400);
+  --color-text-muted:     var(--_gray-500);
+  --color-text-inverse:   var(--_black-pure);
+  --color-text-on-action: var(--_white-pure);
+
+  --color-border-default: #2a2a2a;
+  --color-border-subtle:  #333333;
+  --color-border-accent:  var(--_red-500);
+
+  --color-feedback-badge-bg:     rgba(196, 30, 35, 0.1);
+  --color-feedback-badge-gold-bg: rgba(253, 185, 19, 0.1);
+  --color-feedback-badge-gold-border: rgba(253, 185, 19, 0.3);
+  --color-feedback-overlay-hover: rgba(255, 255, 255, 0.06);
+  --color-feedback-ghost-hover:   rgba(255, 255, 255, 0.06);
+  --color-feedback-outline-hover: rgba(196, 30, 35, 0.08);
+  --color-feedback-social-bg:     rgba(255, 255, 255, 0.05);
+  --color-feedback-hamburger-hover: rgba(196, 30, 35, 0.08);
+}

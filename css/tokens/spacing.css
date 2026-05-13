@@ -1,0 +1,39 @@
+:root {
+  --space-xs:  var(--_space-1);
+  --space-sm:  var(--_space-2);
+  --space-md:  var(--_space-4);
+  --space-lg:  var(--_space-6);
+  --space-xl:  var(--_space-8);
+  --space-2xl: var(--_space-12);
+  --space-3xl: var(--_space-16);
+
+  --radius-sm:   var(--_radius-1);
+  --radius-md:   var(--_radius-2);
+  --radius-lg:   var(--_radius-3);
+  --radius-xl:   var(--_radius-4);
+  --radius-full: var(--_radius-full);
+
+  --border-width-thin:   var(--_border-1);
+  --border-width-medium: var(--_border-2);
+  --border-width-thick:  var(--_border-4);
+
+  --shadow-sm:  var(--_shadow-sm);
+  --shadow-md:  var(--_shadow-md);
+  --shadow-lg:  var(--_shadow-lg);
+  --shadow-xl:  var(--_shadow-xl);
+  --shadow-red: var(--_shadow-red);
+
+  --z-base:    var(--_z-0);
+  --z-raised:  var(--_z-10);
+  --z-overlay: var(--_z-100);
+  --z-navbar:  var(--_z-1000);
+  --z-modal:   var(--_z-2000);
+
+  --transition-fast: var(--_transition-150);
+  --transition-base: var(--_transition-300);
+  --transition-slow: var(--_transition-500);
+
+  --navbar-height:          68px;
+  --navbar-height-scrolled: 52px;
+  --navbar-padding-x:       5%;
+}

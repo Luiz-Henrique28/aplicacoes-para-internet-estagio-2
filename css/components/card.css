@@ -15,7 +15,7 @@
 .card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--color-sport-red);
+  border-color: var(--color-border-accent);
 }
 
 .card__media {
@@ -55,8 +55,8 @@
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--color-sport-red);
-  background: rgba(196, 30, 35, 0.1);
+  color: var(--color-brand-primary);
+  background: var(--color-feedback-badge-bg);
   padding: 2px var(--space-sm);
   border-radius: var(--radius-full);
   width: fit-content;
@@ -97,16 +97,16 @@
 }
 
 .card--featured {
-  border-color: var(--color-sport-gold);
+  border-color: var(--color-brand-accent);
   background: linear-gradient(
     135deg,
-    rgba(196, 30, 35, 0.08) 0%,
+    var(--color-feedback-badge-bg) 0%,
     var(--color-bg-card) 60%
   );
 }
 
 .card--featured:hover {
-  border-color: var(--color-sport-gold);
+  border-color: var(--color-brand-accent);
   box-shadow: var(--shadow-red);
 }
 
@@ -118,17 +118,17 @@
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.1em;
-  color: var(--color-sport-gold);
-  background: rgba(253, 185, 19, 0.12);
-  border: 1px solid rgba(253, 185, 19, 0.3);
+  color: var(--color-brand-accent);
+  background: var(--color-feedback-badge-gold-bg);
+  border: var(--border-width-thin) solid var(--color-feedback-badge-gold-border);
   padding: 2px var(--space-sm);
   border-radius: var(--radius-full);
   z-index: 1;
 }
 
 .card--featured .card__badge {
-  color: var(--color-sport-gold);
-  background: rgba(253, 185, 19, 0.1);
+  color: var(--color-brand-accent);
+  background: var(--color-feedback-badge-gold-bg);
 }
 
 .card--featured .card__title {
@@ -180,7 +180,7 @@
   font-family: var(--font-heading);
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-sport-red);
+  color: var(--color-brand-primary);
   line-height: 1;
 }
 

@@ -1,0 +1,21 @@
+:root {
+  --font-body:    var(--_font-family-body);
+  --font-heading: var(--_font-family-heading);
+
+  --font-size-xs:   var(--_font-size-xs);
+  --font-size-sm:   var(--_font-size-sm);
+  --font-size-base: var(--_font-size-base);
+  --font-size-md:   var(--_font-size-md);
+  --font-size-lg:   var(--_font-size-lg);
+  --font-size-xl:   var(--_font-size-xl);
+  --font-size-2xl:  var(--_font-size-2xl);
+  --font-size-3xl:  var(--_font-size-3xl);
+
+  --font-weight-normal: var(--_font-weight-normal);
+  --font-weight-medium: var(--_font-weight-medium);
+  --font-weight-bold:   var(--_font-weight-bold);
+
+  --line-height-tight:  var(--_line-height-tight);
+  --line-height-normal: var(--_line-height-normal);
+  --line-height-loose:  var(--_line-height-loose);
+}

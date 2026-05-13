@@ -1,0 +1,78 @@
+:root {
+  --_red-300: #e83a40;
+  --_red-400: #d42227;
+  --_red-500: #c41e23;
+  --_red-600: #a8181d;
+
+  --_blue-500: #2E75B6;
+
+  --_gold-400: #fdb913;
+  --_gold-500: #e0a50a;
+
+  --_black-pure: #000000;
+  --_white-pure: #ffffff;
+
+  --_gray-50:  #f5f5f5;
+  --_gray-100: #e0e0e0;
+  --_gray-400: #a0a0a0;
+  --_gray-500: #6b6b6b;
+  --_gray-800: #252525;
+  --_gray-850: #1e1e1e;
+  --_gray-900: #1a1a1a;
+  --_gray-920: #111827;
+  --_gray-950: #0f0f0f;
+
+  --_space-1: 0.25rem;
+  --_space-2: 0.5rem;
+  --_space-4: 1rem;
+  --_space-6: 1.5rem;
+  --_space-8: 2rem;
+  --_space-12: 3rem;
+  --_space-16: 4rem;
+
+  --_radius-1: 4px;
+  --_radius-2: 8px;
+  --_radius-3: 12px;
+  --_radius-4: 16px;
+  --_radius-full: 9999px;
+
+  --_border-1: 1px;
+  --_border-2: 2px;
+  --_border-4: 4px;
+
+  --_font-family-body: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --_font-family-heading: 'Poppins', 'Inter', 'Segoe UI', sans-serif;
+
+  --_font-size-xs:   0.75rem;
+  --_font-size-sm:   0.875rem;
+  --_font-size-base: 1rem;
+  --_font-size-md:   1.125rem;
+  --_font-size-lg:   1.25rem;
+  --_font-size-xl:   1.5rem;
+  --_font-size-2xl:  1.875rem;
+  --_font-size-3xl:  2.25rem;
+
+  --_font-weight-normal: 400;
+  --_font-weight-medium: 500;
+  --_font-weight-bold:   700;
+
+  --_line-height-tight:  1.25;
+  --_line-height-normal: 1.6;
+  --_line-height-loose:  1.8;
+
+  --_shadow-sm:  0 1px 3px rgba(0, 0, 0, 0.4);
+  --_shadow-md:  0 4px 12px rgba(0, 0, 0, 0.5);
+  --_shadow-lg:  0 8px 24px rgba(0, 0, 0, 0.6);
+  --_shadow-xl:  0 16px 40px rgba(0, 0, 0, 0.7);
+  --_shadow-red: 0 8px 24px rgba(196, 30, 35, 0.35);
+
+  --_transition-150: 150ms ease;
+  --_transition-300: 300ms ease;
+  --_transition-500: 500ms ease;
+
+  --_z-0:    0;
+  --_z-10:   10;
+  --_z-100:  100;
+  --_z-1000: 1000;
+  --_z-2000: 2000;
+}

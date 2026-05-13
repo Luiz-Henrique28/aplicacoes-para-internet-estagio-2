@@ -45,56 +45,56 @@
 }
 
 .btn:focus-visible {
-  outline: 3px solid var(--color-sport-red);
+  outline: 3px solid var(--color-action-focus);
   outline-offset: 3px;
-  box-shadow: 0 0 0 5px rgba(196, 30, 35, 0.25);
+  box-shadow: 0 0 0 5px var(--color-action-focus-ring);
 }
 
 .btn--primary {
-  --btn-bg:           var(--color-sport-red);
-  --btn-color:        #ffffff;
-  --btn-border:       var(--color-sport-red);
-  --btn-bg-hover:     var(--color-primary-300);
-  --btn-color-hover:  #ffffff;
-  --btn-border-hover: var(--color-primary-300);
+  --btn-bg:           var(--color-action-primary);
+  --btn-color:        var(--color-text-on-action);
+  --btn-border:       var(--color-action-primary);
+  --btn-bg-hover:     var(--color-action-primary-hover);
+  --btn-color-hover:  var(--color-text-on-action);
+  --btn-border-hover: var(--color-action-primary-hover);
 
-  box-shadow: 0 4px 14px rgba(196, 30, 35, 0.3);
+  box-shadow: 0 4px 14px var(--color-action-shadow);
 }
 
 .btn--primary:hover {
-  box-shadow: 0 6px 20px rgba(196, 30, 35, 0.45);
+  box-shadow: 0 6px 20px var(--color-action-shadow-hover);
 }
 
 .btn--primary:focus-visible {
-  outline-color: var(--color-sport-gold);
+  outline-color: var(--color-brand-accent);
   box-shadow: 0 0 0 5px rgba(253, 185, 19, 0.35);
 }
 
 .btn--outline {
   --btn-bg:           transparent;
-  --btn-color:        var(--color-sport-red);
-  --btn-border:       var(--color-sport-red);
-  --btn-bg-hover:     rgba(196, 30, 35, 0.08);
-  --btn-color-hover:  var(--color-sport-red);
-  --btn-border-hover: var(--color-sport-red);
+  --btn-color:        var(--color-action-primary);
+  --btn-border:       var(--color-action-primary);
+  --btn-bg-hover:     var(--color-feedback-outline-hover);
+  --btn-color-hover:  var(--color-action-primary);
+  --btn-border-hover: var(--color-action-primary);
 }
 
 .btn--ghost {
   --btn-bg:           transparent;
   --btn-color:        var(--color-text-secondary);
   --btn-border:       transparent;
-  --btn-bg-hover:     rgba(255, 255, 255, 0.06);
+  --btn-bg-hover:     var(--color-feedback-ghost-hover);
   --btn-color-hover:  var(--color-text-primary);
   --btn-border-hover: transparent;
 }
 
 .btn--gold {
-  --btn-bg:           var(--color-sport-gold);
+  --btn-bg:           var(--color-brand-accent);
   --btn-color:        var(--color-text-inverse);
-  --btn-border:       var(--color-sport-gold);
-  --btn-bg-hover:     #e0a50a;
+  --btn-border:       var(--color-brand-accent);
+  --btn-bg-hover:     var(--color-brand-accent-hover);
   --btn-color-hover:  var(--color-text-inverse);
-  --btn-border-hover: #e0a50a;
+  --btn-border-hover: var(--color-brand-accent-hover);
 }
 
 .btn--sm {
