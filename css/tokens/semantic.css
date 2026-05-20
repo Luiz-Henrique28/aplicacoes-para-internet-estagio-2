@@ -1,9 +1,14 @@
 :root {
-  --color-brand-primary:   var(--_red-500);
+  --color-brand-primary:       var(--_red-500);
   --color-brand-primary-hover: var(--_red-300);
-  --color-brand-accent:    var(--_gold-400);
-  --color-brand-accent-hover: var(--_gold-500);
-  --color-brand-dark:      var(--_black-pure);
+  --color-brand-accent:        var(--_gold-400);
+  --color-brand-accent-hover:  var(--_gold-500);
+  --color-brand-dark:          var(--_black-pure);
+
+  /* Aliases Sport Club — usados diretamente no layout e componentes */
+  --color-sport-red:   var(--_red-500);
+  --color-sport-gold:  var(--_gold-400);
+  --color-sport-black: var(--_black-pure);
 
   --color-action-primary:        var(--_red-500);
   --color-action-primary-hover:  var(--_red-300);

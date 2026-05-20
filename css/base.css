@@ -1,3 +1,7 @@
+/* ============================================================
+   BASE — Estilos elementares de HTML
+   ============================================================ */
+
 body {
   font-family: var(--font-body);
   font-size: var(--font-size-base);
@@ -5,6 +9,9 @@ body {
   line-height: var(--line-height-normal);
   color: var(--color-text-primary);
   background-color: var(--color-bg-base);
+
+  /* CORREÇÃO CRÍTICA #01 — Evita scroll horizontal em qualquer breakpoint */
+  overflow-x: hidden;
 }
 
 h1,
@@ -19,9 +26,10 @@ h6 {
   color: var(--color-text-primary);
 }
 
-h1 { font-size: var(--font-size-3xl); }
-h2 { font-size: var(--font-size-2xl); }
-h3 { font-size: var(--font-size-xl); }
+/* Tamanhos com clamp() para escalar fluidamente entre mobile e desktop */
+h1 { font-size: clamp(1.75rem, 5vw, var(--font-size-3xl)); }
+h2 { font-size: clamp(1.375rem, 3vw, var(--font-size-2xl)); }
+h3 { font-size: clamp(1.125rem, 2vw, var(--font-size-xl)); }
 h4 { font-size: var(--font-size-lg); }
 h5 { font-size: var(--font-size-md); }
 h6 { font-size: var(--font-size-base); }
@@ -60,10 +68,12 @@ a:hover {
   color: var(--color-brand-primary-hover);
 }
 
+/* DESAFIO DO CLIENTE — Focus visível reforçado (visível até em projetores) */
 a:focus-visible {
-  outline: 2px solid var(--color-action-focus);
-  outline-offset: 3px;
+  outline: 3px solid var(--color-action-focus);
+  outline-offset: 4px;
   border-radius: var(--radius-sm);
+  box-shadow: 0 0 0 6px var(--color-action-focus-ring);
 }
 
 img {
@@ -89,6 +99,10 @@ select {
   border-radius: var(--radius-md);
   font-size: var(--font-size-base);
   width: 100%;
+
+  /* CORREÇÃO CRÍTICA #09 — Área de clique mínima para inputs (WCAG 2.5.5) */
+  min-height: 44px;
+
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
@@ -98,6 +112,15 @@ select:focus {
   outline: none;
   border-color: var(--color-action-focus);
   box-shadow: 0 0 0 3px var(--color-action-focus-ring);
+}
+
+/* DESAFIO DO CLIENTE — Focus reforçado em inputs também */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-action-focus);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--color-action-focus-ring);
 }
 
 input::placeholder,
@@ -114,4 +137,20 @@ hr {
   border: none;
   border-top: var(--border-width-thin) solid var(--color-border-default);
   margin: var(--space-xl) 0;
+}
+
+/* ============================================================
+   CORREÇÃO CRÍTICA #11 — prefers-reduced-motion
+   Desativa todas as transições e animações para usuários que
+   configuraram o sistema para reduzir movimento (acessibilidade).
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

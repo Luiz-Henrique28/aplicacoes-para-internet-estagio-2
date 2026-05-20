@@ -1,3 +1,7 @@
+/* ============================================================
+   LAYOUT — Grid, Hero, Sections, Container
+   ============================================================ */
+
 .container {
   width: 100%;
   max-width: 1300px;
@@ -18,7 +22,7 @@
 
 .section__title {
   font-family: var(--font-heading);
-  font-size: var(--font-size-2xl);
+  font-size: clamp(1.375rem, 3vw, var(--font-size-2xl));
   font-weight: var(--font-weight-bold);
   color: var(--color-sport-gold);
   text-transform: uppercase;
@@ -28,10 +32,19 @@
   margin-bottom: var(--space-xl);
 }
 
+/* ============================================================
+   CARDS GRID — Container pai para as Container Queries dos cards
+   ============================================================ */
 .cards-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-lg);
+
+  /* CAMINHO B — Habilita Container Queries nos filhos.
+     Os cards agora se adaptam ao TAMANHO DESTE GRID,
+     e não ao tamanho da viewport. */
+  container-type: inline-size;
+  container-name: cards-grid;
 }
 
 @media (min-width: 768px) {
@@ -46,6 +59,9 @@
   }
 }
 
+/* ============================================================
+   HERO
+   ============================================================ */
 .hero {
   position: relative;
   min-height: 60vh;
@@ -98,7 +114,7 @@
 }
 
 .hero__subtitle {
-  font-size: var(--font-size-lg);
+  font-size: clamp(var(--font-size-base), 2vw, var(--font-size-lg));
   color: var(--color-text-secondary);
   margin-bottom: var(--space-xl);
 }
@@ -110,6 +126,9 @@
   flex-wrap: wrap;
 }
 
+/* ============================================================
+   SIDEBAR LAYOUT
+   ============================================================ */
 .sidebar-layout {
   display: grid;
   gap: var(--space-xl);
@@ -117,6 +136,48 @@
 
 @media (min-width: 1024px) {
   .sidebar-layout {
-    grid-template-columns: 280px 1fr 280px;
+    /* CORREÇÃO CRÍTICA #01 — Usa min() para evitar overflow em telas menores */
+    grid-template-columns: min(280px, 25%) 1fr min(280px, 25%);
+  }
+}
+
+/* ============================================================
+   DESAFIO DO CLIENTE — Telão / Projetor (1920×1080)
+   Aumenta fontes, espaçamentos e max-width para melhorar
+   a leitura a distância em apresentações e projetores.
+   ============================================================ */
+@media (min-width: 1920px) {
+  :root {
+    /* Escala de fonte base sobe para 18px no telão */
+    --font-size-base: 1.125rem;
+    --font-size-sm:   1rem;
+    --font-size-lg:   1.375rem;
+    --font-size-xl:   1.625rem;
+    --font-size-2xl:  2rem;
+    --font-size-3xl:  2.5rem;
+
+    /* Espaçamentos um pouco maiores */
+    --space-md:  1.25rem;
+    --space-lg:  2rem;
+    --space-xl:  2.5rem;
+  }
+
+  .main {
+    max-width: 1600px;
+    padding: var(--space-3xl) var(--space-2xl);
+  }
+
+  .hero {
+    min-height: 70vh;
+    padding: 5rem var(--space-2xl);
+  }
+
+  .hero__content {
+    max-width: 900px;
+  }
+
+  .section__title {
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+    border-left-width: 6px;
   }
 }

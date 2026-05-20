@@ -1,9 +1,13 @@
+/* ============================================================
+   BTN — Sistema de botões
+   ============================================================ */
+
 .btn {
-  --btn-bg:          transparent;
-  --btn-color:       var(--color-text-primary);
-  --btn-border:      transparent;
-  --btn-bg-hover:    transparent;
-  --btn-color-hover: var(--color-text-primary);
+  --btn-bg:           transparent;
+  --btn-color:        var(--color-text-primary);
+  --btn-border:       transparent;
+  --btn-bg-hover:     transparent;
+  --btn-color-hover:  var(--color-text-primary);
   --btn-border-hover: transparent;
 
   display: inline-flex;
@@ -25,6 +29,11 @@
   background-color: var(--btn-bg);
   color: var(--btn-color);
   text-decoration: none;
+
+  /* CORREÇÃO CRÍTICA #03 — Área de clique mínima WCAG 2.5.5 (44×44px) */
+  min-height: 44px;
+  min-width: 44px;
+
   transition:
     background-color var(--transition-fast),
     color var(--transition-fast),
@@ -44,11 +53,14 @@
   transform: translateY(0);
 }
 
+/* DESAFIO DO CLIENTE — Focus visível robusto, legível até em projetores */
 .btn:focus-visible {
   outline: 3px solid var(--color-action-focus);
-  outline-offset: 3px;
-  box-shadow: 0 0 0 5px var(--color-action-focus-ring);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 7px var(--color-action-focus-ring);
 }
+
+/* --- Variantes de cor --- */
 
 .btn--primary {
   --btn-bg:           var(--color-action-primary);
@@ -67,7 +79,7 @@
 
 .btn--primary:focus-visible {
   outline-color: var(--color-brand-accent);
-  box-shadow: 0 0 0 5px rgba(253, 185, 19, 0.35);
+  box-shadow: 0 0 0 7px rgba(253, 185, 19, 0.35);
 }
 
 .btn--outline {
@@ -97,6 +109,9 @@
   --btn-border-hover: var(--color-brand-accent-hover);
 }
 
+/* --- Variantes de tamanho --- */
+
+/* btn--sm mantém min-height 44px (WCAG) mas reduz padding visual */
 .btn--sm {
   padding: var(--space-xs) var(--space-md);
   font-size: var(--font-size-xs);
@@ -107,6 +122,23 @@
   font-size: var(--font-size-base);
   border-radius: var(--radius-lg);
 }
+
+/* DESAFIO DO CLIENTE — Botões maiores em telão para leitura a distância */
+@media (min-width: 1920px) {
+  .btn {
+    font-size: var(--font-size-base);
+    padding: var(--space-md) var(--space-xl);
+    min-height: 52px;
+  }
+
+  .btn--lg {
+    font-size: var(--font-size-md);
+    padding: var(--space-lg) var(--space-2xl);
+    min-height: 60px;
+  }
+}
+
+/* --- Estados especiais --- */
 
 .btn:disabled,
 .btn[aria-disabled="true"] {
