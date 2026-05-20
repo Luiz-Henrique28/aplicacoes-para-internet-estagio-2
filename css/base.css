@@ -1,7 +1,3 @@
-/* ============================================================
-   BASE — Estilos elementares de HTML
-   ============================================================ */
-
 body {
   font-family: var(--font-body);
   font-size: var(--font-size-base);
@@ -9,8 +5,6 @@ body {
   line-height: var(--line-height-normal);
   color: var(--color-text-primary);
   background-color: var(--color-bg-base);
-
-  /* CORREÇÃO CRÍTICA #01 — Evita scroll horizontal em qualquer breakpoint */
   overflow-x: hidden;
 }
 
@@ -26,7 +20,6 @@ h6 {
   color: var(--color-text-primary);
 }
 
-/* Tamanhos com clamp() para escalar fluidamente entre mobile e desktop */
 h1 { font-size: clamp(1.75rem, 5vw, var(--font-size-3xl)); }
 h2 { font-size: clamp(1.375rem, 3vw, var(--font-size-2xl)); }
 h3 { font-size: clamp(1.125rem, 2vw, var(--font-size-xl)); }
@@ -68,7 +61,6 @@ a:hover {
   color: var(--color-brand-primary-hover);
 }
 
-/* DESAFIO DO CLIENTE — Focus visível reforçado (visível até em projetores) */
 a:focus-visible {
   outline: 3px solid var(--color-action-focus);
   outline-offset: 4px;
@@ -99,10 +91,7 @@ select {
   border-radius: var(--radius-md);
   font-size: var(--font-size-base);
   width: 100%;
-
-  /* CORREÇÃO CRÍTICA #09 — Área de clique mínima para inputs (WCAG 2.5.5) */
   min-height: 44px;
-
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
@@ -114,7 +103,6 @@ select:focus {
   box-shadow: 0 0 0 3px var(--color-action-focus-ring);
 }
 
-/* DESAFIO DO CLIENTE — Focus reforçado em inputs também */
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
@@ -139,11 +127,6 @@ hr {
   margin: var(--space-xl) 0;
 }
 
-/* ============================================================
-   CORREÇÃO CRÍTICA #11 — prefers-reduced-motion
-   Desativa todas as transições e animações para usuários que
-   configuraram o sistema para reduzir movimento (acessibilidade).
-   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

@@ -1,34 +1,17 @@
-/* ============================================================
-   SPORT RECIFE — main.css
-   Ponto de entrada que declara e importa as Cascade Layers.
-   A ordem aqui define a precedência: layers declaradas por
-   último têm maior peso, sem precisar de !important.
-   ============================================================ */
-
-/* 1. Declaração explícita da ordem das layers
-      (a ordem desta linha é o que importa, não a dos @import) */
 @layer reset, tokens, base, layout, components, utilities;
 
-/* 2. Tokens (design system primitivos e semânticos) */
 @import url('./tokens/primitives.css') layer(tokens);
 @import url('./tokens/semantic.css')   layer(tokens);
 @import url('./tokens/spacing.css')    layer(tokens);
 @import url('./tokens/typography.css') layer(tokens);
 
-/* 3. Reset (normalização do browser) */
 @import url('./reset.css') layer(reset);
+@import url('./base.css')  layer(base);
 
-/* 4. Base (estilos de elementos HTML) */
-@import url('./base.css') layer(base);
+@import url('./layout.css')    layer(layout);
+@import url('./utilities.css') layer(utilities);
 
-/* 5. Layout (grid, hero, sections, container) */
-@import url('./layout.css') layer(layout);
-
-/* 6. Componentes */
 @import url('./components/navbar.css') layer(components);
 @import url('./components/card.css')   layer(components);
 @import url('./components/footer.css') layer(components);
 @import url('./components/btn.css')    layer(components);
-
-/* 7. Utilities (classes de sobrescrita pontual — maior precedência) */
-@import url('./utilities.css') layer(utilities);

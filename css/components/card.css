@@ -1,13 +1,3 @@
-/* ============================================================
-   CARD — Componente autônomo de conteúdo
-   
-   CAMINHO B (Container Queries):
-   Os cards agora se adaptam ao tamanho do SEU CONTAINER PAI
-   (.cards-grid), não da viewport. Isso significa que o mesmo
-   componente funciona corretamente em grids de 3 colunas,
-   em sidebars estreitas, ou em layouts futuros sem alteração.
-   ============================================================ */
-
 .card {
   position: relative;
   display: flex;
@@ -27,8 +17,6 @@
   box-shadow: var(--shadow-lg);
   border-color: var(--color-border-accent);
 }
-
-/* --- Media --- */
 
 .card__media {
   aspect-ratio: 16 / 9;
@@ -51,8 +39,6 @@
   filter: brightness(0.9);
 }
 
-/* --- Body --- */
-
 .card__body {
   padding: var(--space-lg);
   flex: 1;
@@ -60,8 +46,6 @@
   flex-direction: column;
   gap: var(--space-sm);
 }
-
-/* --- Badge --- */
 
 .card__badge {
   display: inline-flex;
@@ -78,8 +62,6 @@
   width: fit-content;
 }
 
-/* --- Title --- */
-
 .card__title {
   font-family: var(--font-heading);
   font-size: var(--font-size-lg);
@@ -89,8 +71,6 @@
   margin: 0;
 }
 
-/* --- Text --- */
-
 .card__text {
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
@@ -98,8 +78,6 @@
   flex: 1;
   margin: 0;
 }
-
-/* --- Footer --- */
 
 .card__footer {
   display: flex;
@@ -110,8 +88,6 @@
   gap: var(--space-sm);
 }
 
-/* --- Meta --- */
-
 .card__meta {
   font-size: var(--font-size-xs);
   color: var(--color-text-muted);
@@ -119,12 +95,6 @@
   align-items: center;
   gap: var(--space-xs);
 }
-
-/* ============================================================
-   CARD FEATURED — Via media query (ainda depende da viewport
-   para o span de coluna no grid pai).
-   O layout INTERNO usa Container Query.
-   ============================================================ */
 
 .card--featured {
   border-color: var(--color-brand-accent);
@@ -165,7 +135,6 @@
   font-size: var(--font-size-xl);
 }
 
-/* O card featured ocupa 2 colunas quando o grid tem espaço */
 @media (min-width: 1200px) {
   .card--featured {
     grid-column: span 2;
@@ -175,17 +144,6 @@
     aspect-ratio: 21 / 9;
   }
 }
-
-/* ============================================================
-   CARD HORIZONTAL — CAMINHO B: Container Queries
-   
-   ANTES: usava @media (max-width: 480px) — o card empilhava
-   baseado na VIEWPORT, não no tamanho real disponível.
-   
-   AGORA: usa @container — o card empilha quando SEU CONTAINER
-   fica menor que 420px, independentemente da viewport.
-   Funciona igual em sidebars, modais, grids de 4 colunas, etc.
-   ============================================================ */
 
 .card--horizontal {
   flex-direction: row;
@@ -198,7 +156,6 @@
   aspect-ratio: auto;
 }
 
-/* @container: o card empilha quando o CONTAINER PAI < 420px */
 @container cards-grid (max-width: 420px) {
   .card--horizontal {
     flex-direction: column;
@@ -210,14 +167,6 @@
     aspect-ratio: 16 / 9;
   }
 }
-
-/* ============================================================
-   CARD STAT — CAMINHO B: Container Queries
-   
-   Em containers pequenos (coluna única), os números ficam
-   menores para não vazar. Em containers grandes, voltam ao
-   tamanho original.
-   ============================================================ */
 
 .card--stat {
   text-align: center;
@@ -244,7 +193,6 @@
   letter-spacing: 0.1em;
 }
 
-/* Quando o container é grande, os stat cards ficam mais generosos */
 @container cards-grid (min-width: 600px) {
   .card--stat {
     padding: var(--space-2xl) var(--space-xl);
@@ -255,10 +203,6 @@
   }
 }
 
-/* ============================================================
-   DESAFIO DO CLIENTE — Telão (1920px)
-   Cards mais espaçosos e fontes maiores em projetores
-   ============================================================ */
 @media (min-width: 1920px) {
   .card__body {
     padding: var(--space-xl);
