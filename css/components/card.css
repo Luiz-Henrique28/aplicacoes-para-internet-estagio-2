@@ -13,7 +13,7 @@
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(var(--hover-lift-card));
   box-shadow: var(--shadow-lg);
   border-color: var(--color-border-accent);
 }
@@ -30,13 +30,13 @@
   object-fit: cover;
   border-radius: 0;
   margin: 0;
-  filter: brightness(0.75);
+  filter: var(--filter-img-default);
   transition: transform var(--transition-base), filter var(--transition-base);
 }
 
 .card:hover .card__media img {
-  transform: scale(1.05);
-  filter: brightness(0.9);
+  transform: scale(var(--hover-scale-img));
+  filter: var(--filter-img-hover);
 }
 
 .card__body {
@@ -54,10 +54,10 @@
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: var(--letter-spacing-wide);
   color: var(--color-brand-primary);
   background: var(--color-feedback-badge-bg);
-  padding: 2px var(--space-sm);
+  padding: var(--space-badge-y) var(--space-sm);
   border-radius: var(--radius-full);
   width: fit-content;
 }
@@ -117,11 +117,11 @@
   right: var(--space-md);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
-  letter-spacing: 0.1em;
+  letter-spacing: var(--letter-spacing-base);
   color: var(--color-brand-accent);
   background: var(--color-feedback-badge-gold-bg);
   border: var(--border-width-thin) solid var(--color-feedback-badge-gold-border);
-  padding: 2px var(--space-sm);
+  padding: var(--space-badge-y) var(--space-sm);
   border-radius: var(--radius-full);
   z-index: 1;
 }
@@ -190,7 +190,7 @@
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: var(--letter-spacing-base);
 }
 
 @container cards-grid (min-width: 600px) {
@@ -228,6 +228,6 @@
 
   .card--stat .card__label {
     font-size: var(--font-size-base);
-    letter-spacing: 0.12em;
+    letter-spacing: var(--letter-spacing-wide);
   }
 }

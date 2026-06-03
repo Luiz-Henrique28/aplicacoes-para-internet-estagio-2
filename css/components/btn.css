@@ -16,7 +16,7 @@
   font-weight: var(--font-weight-bold);
   line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--letter-spacing-sm);
   white-space: nowrap;
   cursor: pointer;
   user-select: none;
@@ -39,7 +39,7 @@
   background-color: var(--btn-bg-hover);
   color: var(--btn-color-hover);
   border-color: var(--btn-border-hover);
-  transform: translateY(-1px);
+  transform: translateY(var(--hover-lift-btn));
 }
 
 .btn:active {

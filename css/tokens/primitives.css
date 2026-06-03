@@ -75,4 +75,22 @@
   --_z-100:  100;
   --_z-1000: 1000;
   --_z-2000: 2000;
+
+  /* Letter-spacing primitivos */
+  --_letter-spacing-1: 0.05em;
+  --_letter-spacing-2: 0.08em;
+  --_letter-spacing-3: 0.10em;
+  --_letter-spacing-4: 0.12em;
+
+  /* Transformações de hover */
+  --_translate-y-card: -8px;
+  --_translate-y-btn:  -1px;
+  --_scale-img-hover:  1.05;
+
+  /* Filtros de brilho de imagem */
+  --_brightness-img-default: 0.75;
+  --_brightness-img-hover:   0.9;
+
+  /* Espaçamento fino do badge */
+  --_space-badge-y: 2px;
 }

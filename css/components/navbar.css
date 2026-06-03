@@ -61,14 +61,14 @@
   font-size: var(--font-size-md);
   color: var(--color-text-primary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: var(--letter-spacing-xs);
 }
 
 .navbar__logo-sub {
   font-size: var(--font-size-xs);
   color: var(--color-text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: var(--letter-spacing-wide);
 }
 
 .navbar__nav {
@@ -90,7 +90,7 @@
   font-weight: var(--font-weight-medium);
   color: var(--color-text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--letter-spacing-sm);
   border-radius: var(--radius-md);
   transition: color var(--transition-fast), background var(--transition-fast);
 }

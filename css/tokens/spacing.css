@@ -36,4 +36,22 @@
   --navbar-height:          68px;
   --navbar-height-scrolled: 52px;
   --navbar-padding-x:       5%;
+
+  /* Letter-spacing semânticos */
+  --letter-spacing-xs:   var(--_letter-spacing-1);
+  --letter-spacing-sm:   var(--_letter-spacing-2);
+  --letter-spacing-base: var(--_letter-spacing-3);
+  --letter-spacing-wide: var(--_letter-spacing-4);
+
+  /* Transformações de hover */
+  --hover-lift-card: var(--_translate-y-card);
+  --hover-lift-btn:  var(--_translate-y-btn);
+  --hover-scale-img: var(--_scale-img-hover);
+
+  /* Filtros de brilho de imagem */
+  --filter-img-default: brightness(var(--_brightness-img-default));
+  --filter-img-hover:   brightness(var(--_brightness-img-hover));
+
+  /* Espaçamento fino do badge */
+  --space-badge-y: var(--_space-badge-y);
 }

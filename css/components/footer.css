@@ -107,7 +107,7 @@
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: var(--letter-spacing-base);
   padding-bottom: var(--space-sm);
   border-bottom: var(--border-width-thin) solid var(--color-border-default);
 }
